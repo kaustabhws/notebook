@@ -49,6 +49,16 @@ export default function LoginSignup() {
         }
     }
 
+    const togglePass = () => {
+        let input = document.getElementById('password')
+
+        if(input.type === 'password') {
+            input.setAttribute('type', 'text')
+        } else {
+            input.setAttribute('type', 'password')
+        }
+    }
+
     return (
         <main className="main">
             <div className="containers">
@@ -92,6 +102,7 @@ export default function LoginSignup() {
                                 className="input-field"
                                 placeholder="Password"
                             />
+                            <i class="fa-regular fa-eye" onClick={togglePass}></i>
                         </div>
                         <div id="liveAlertPlaceholder">
                             {showStat && (

@@ -104,9 +104,6 @@ export default function LoginSignup() {
                             )}
                         </div>
                         <div className="input-control">
-                            <a href="#" className="text text-links">
-                                Forgot Password
-                            </a>
                             <button
                                 type="submit"
                                 name="submit"

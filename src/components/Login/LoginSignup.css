@@ -209,4 +209,7 @@ img {
     .text-normal, .text-links {
         font-size: 0.80rem;
     }
+    .alert-success {
+        font-size: 14px;
+    }
 }

@@ -54,6 +54,16 @@ export default function LoginSignup() {
         }, 2000);
     }
 
+    const togglePass = () => {
+        let input = document.getElementById('cpassword')
+
+        if(input.type === 'password') {
+            input.setAttribute('type', 'text')
+        } else {
+            input.setAttribute('type', 'password')
+        }
+    }
+
     return (
         <main className="main">
             <div className="containers">
@@ -125,6 +135,7 @@ export default function LoginSignup() {
                                 minLength={5}
                                 required
                             />
+                            <i class="fa-regular fa-eye" onClick={togglePass}></i>
                         </div>
                         <div id="liveAlertPlaceholder">
                             {showStat && (

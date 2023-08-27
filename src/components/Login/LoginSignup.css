@@ -21,7 +21,9 @@
     color: var(--color-black);
     background: var(--color-light);
 }
-
+.alert {
+    text-align: center;
+}
 .dark-main {
     background-color: #131313 !important;
 }

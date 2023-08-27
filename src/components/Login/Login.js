@@ -104,7 +104,7 @@ export default function LoginSignup(props) {
                                 placeholder="Password"
                                 required
                             />
-                            <i class="fa-regular fa-eye" onClick={togglePass}></i>
+                            {props.mode === 'light' ? <i class="fa-regular fa-eye" onClick={togglePass}></i> : <i class="fa-regular fa-eye" style={{color: '#ffffff'}} onClick={togglePass}></i>}
                         </div>
                         <div id="liveAlertPlaceholder">
                             {showStat && (

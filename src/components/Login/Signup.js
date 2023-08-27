@@ -24,6 +24,9 @@ export default function LoginSignup(props) {
 
     const [showStat, setShowStat] = useState(false);
 
+    const [error, setError] = useState(false)
+    const [errorMessage, setErrorMessage] = useState("");
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -46,18 +49,26 @@ export default function LoginSignup(props) {
             body: JSON.stringify({ name: creds.name, email: creds.email, password: creds.password }),
         });
         const json = await response.json()
-        localStorage.setItem('token', json.authtoken)
-        setShowStat(true)
-        setTimeout(() => {
-            setShowStat(false);
-            history("/")
-        }, 2000);
+        if (json.authtoken) {
+            localStorage.setItem('token', json.authtoken)
+            setShowStat(true)
+            setTimeout(() => {
+                setShowStat(false);
+                history("/")
+            }, 2000);
+        } else {
+            setError(true)
+            setErrorMessage(json.error)
+            setTimeout(() => {
+                setError(false)
+            }, 3000);
+        }
     }
 
     const togglePass = () => {
         let input = document.getElementById('cpassword')
 
-        if(input.type === 'password') {
+        if (input.type === 'password') {
             input.setAttribute('type', 'text')
         } else {
             input.setAttribute('type', 'password')
@@ -137,7 +148,7 @@ export default function LoginSignup(props) {
                                 minLength={5}
                                 required
                             />
-                            <i class="fa-regular fa-eye" onClick={togglePass}></i>
+                            {props.mode === 'light' ? <i class="fa-regular fa-eye" onClick={togglePass}></i> : <i class="fa-regular fa-eye" style={{ color: '#ffffff' }} onClick={togglePass}></i>}
                         </div>
                         <div id="liveAlertPlaceholder">
                             {showStat && (
@@ -147,6 +158,11 @@ export default function LoginSignup(props) {
                         <div id="liveAlertPlaceholder">
                             {showAlert && (
                                 <div className="alert alert-danger">Passwords do not match</div>
+                            )}
+                        </div>
+                        <div id="liveAlertPlaceholder">
+                            {error && (
+                                <div className="alert alert-danger sign-error">{errorMessage}</div>
                             )}
                         </div>
                         <div className="input-control-signBtn">

@@ -1,0 +1,41 @@
+.card {
+    width: 15rem;
+}
+.card-title, .myNotes {
+    font-weight: 600;
+}
+.editicons {
+    display: flex;
+    justify-content: space-between;
+}
+.alert-div {
+    width: 270px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 833px) {
+    .card {
+        width: 190px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .card {
+        width: 170px;
+    }
+    .alert-div {
+        text-align: center;
+        width: 150px;
+    }
+}
+
+@media only screen and (min-width: 833px) {
+    .card {
+        width: 180px;
+    }
+}
+
+@media only screen and (min-width: 1046px) {
+    .card {
+        width: 230px;
+    }
+}

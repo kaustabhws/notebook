@@ -5,7 +5,7 @@ import './Notes.css'
 import AddNote from './AddNote'
 import { useNavigate } from 'react-router-dom'
 
-const Notes = () => {
+const Notes = (props) => {
 
     const context = useContext(NoteContext)
     const { notes, allNotes, editNote } = context
@@ -53,7 +53,7 @@ const Notes = () => {
             <button type="button" ref={ref} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
-            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-theme={`${props.mode}`}>
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">

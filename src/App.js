@@ -35,9 +35,9 @@ function App() {
             <Navbar mode={myMode} toggleMode={toggleBtn} myStat={myStat} />
           </div>
           <Routes>
-            <Route exact path='/' element={<Home />} />
+            <Route exact path='/' element={<Home mode={myMode} toggleMode={toggleBtn} myStat={myStat} />} />} />
             <Route exact path='/login' element={<Login mode={myMode} toggleMode={toggleBtn} myStat={myStat} />} />
-            <Route exact path='/signup' element={<Signup mode={myMode} toggleMode={toggleBtn} myStat={myStat} />} />} />
+            <Route exact path='/signup' element={<Signup mode={myMode} toggleMode={toggleBtn} myStat={myStat} />} />
             <Route exact path='/welcome' element={<Welcome mode={myMode} toggleMode={toggleBtn} myStat={myStat} />} />
           </Routes>
         </Router>

@@ -38,6 +38,9 @@
     color: white !important;
     background: #131313 !important;
 }
+.dark-main ::placeholder {
+    color: rgb(216, 216, 216);
+}
 a,
 button {
     font-family: inherit;

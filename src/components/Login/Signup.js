@@ -91,6 +91,7 @@ export default function LoginSignup() {
                                 id="name"
                                 className="input-field"
                                 placeholder="Name"
+                                required
                             />
                         </div>
                         <div className="input-control">
@@ -104,6 +105,7 @@ export default function LoginSignup() {
                                 id="email"
                                 className="input-field"
                                 placeholder="Email Address"
+                                required
                             />
                         </div>
                         <div className="input-control">

@@ -49,7 +49,7 @@ function Navbar(props) {
             onClick={(e) => toggleMobileMenu((prevMobileMenu) => !prevMobileMenu)}
           >
             <span className={`bar ${props.mode}-toggle`}></span>
-            <span className={`bar ${props.mode}-toggle`}></span>
+            <span className={`bar ${props.mode}-toggle mid`}></span>
             <span className={`bar ${props.mode}-toggle`}></span>
           </div>
           <ul className={navClassNames}>

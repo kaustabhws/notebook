@@ -155,6 +155,9 @@ input {
 .dark-toggle {
   background-color: white !important;
 }
+.mid {
+  margin-left: 5px !important;
+}
 .menu-toggle .bar {
   width: 25px;
   height: 3px;
